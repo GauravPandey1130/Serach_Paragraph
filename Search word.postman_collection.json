@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "495f01e8-767b-4a35-b4dd-d27cfa603430",
+		"name": "Search word",
+		"description": "StartFragmentThis API provides endpoints for managing users and paragraphs, including creating users, retrieving user information, creating paragraphs associated with users, retrieving paragraph information, and searching for a word within a paragraph.EndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32993170"
+	},
+	"item": [
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"3"
+					]
+				},
+				"description": "Retrieves information about a specific user."
+			},
+			"response": []
+		},
+		{
+			"name": "Search word",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/search-word/?user_id=3&word=lorem&paragraph_id=16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search-word",
+						""
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "3"
+						},
+						{
+							"key": "word",
+							"value": "lorem"
+						},
+						{
+							"key": "paragraph_id",
+							"value": "16"
+						}
+					]
+				},
+				"description": "Searches for a word within a paragraph associated with a user."
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Gaurav\",\r\n    \"email\":\"Tester@gmail.com\",\r\n    \"dob\":\"1990-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						""
+					]
+				},
+				"description": "Creates a new user with the provided name, email, and date of birth (optional)."
+			},
+			"response": []
+		},
+		{
+			"name": "Get paragraph",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/paragraphs/1/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"paragraphs",
+						"1",
+						""
+					]
+				},
+				"description": "Retrieves information about a specific paragraph."
+			},
+			"response": []
+		},
+		{
+			"name": "Create paragraph",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Lorem said uj jlass nska as ii  alknsd dh hiais cnash hakshdhh .\\n\\nLorem dasdd gjsb qhjajsjd jhjaghus jdhjay hjauhs jhaiouh jbjsuah dujb uhjdubjbsd ihuhsyd.\\n\\nMJS HJKH JASH HHJJHJH  JHHSD JAKJHSD HABJ UJJSDHUAJSHHUUHJNA HH  HAHD HJJHHASD H HJHJHS\",\r\n    \r\n    \"user_email\": \"Tester@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/paragraphs/create/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"paragraphs",
+						"create",
+						""
+					]
+				},
+				"description": "Creates a new paragraph associated with a user."
+			},
+			"response": []
+		}
+	]
+}
